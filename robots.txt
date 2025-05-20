@@ -3,11 +3,41 @@
 # 1. Określenie User-agenta (dotyczy wszystkich robotów)
 User-agent: *
 
-# 2. Zablokowane ścieżki dla robotów (przykład)
+# 2. Zablokowane ścieżki dla robotów (przykłady)
 Disallow: /admin/
+Disallow: /logowanie/
+Disallow: /koszyk/
+Disallow: /panel-uzytkownika/
+Disallow: /phpmyadmin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /testy/
+Disallow: /backup/
 
-# 3. Wyjątek od blokady - folder publiczny
+# 3. Wyjątki od blokady - foldery publiczne, API, dokumentacja itp.
 Allow: /publiczny-folder/
+Allow: /api/
+Allow: /dokumentacja/
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
 
-# 4. Lokalizacja mapy witryny
+# 4. Blokowanie konkretnych plików
+Disallow: /config.php
+Disallow: /db_connect.php
+Disallow: /README.md
+Disallow: /LICENSE
+
+# 5. Blokowanie parametrów URL (przykład blokady wyszukiwania z parametrami)
+Disallow: /*?sessionid=
+Disallow: /*?token=
+Disallow: /*?debug=
+
+# 6. Blokowanie indeksowania stron z końcówką .tmp lub .bak
+Disallow: /*.tmp$
+Disallow: /*.bak$
+
+# 7. Mapa witryny (zaktualizuj poniżej, jeśli domena się zmieni)
 Sitemap: https://twojastrona.pl/sitemap.xml
