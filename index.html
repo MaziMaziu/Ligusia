@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Najlepsza polska encyklopedia League of Legends: bohaterowie, galeria, aktualności, głosowanie na ulubionego championa. Patch notes, ciekawostki, streamerzy, społeczność LoL, wszystko o grze!"/>
+    <meta name="keywords" content="League of Legends, LoL, bohaterowie, galeria, głosowanie, poradniki, meta, e-sport, streamerzy, Polska, champion, runy, buildy, patch notes, ciekawostki"/>
+    <meta property="og:title" content="League of Legends Polska - Twoje źródło wiedzy o LoL"/>
+    <meta property="og:description" content="Bohaterowie, galeria, głosowanie, aktualności, streamerzy i społeczność League of Legends w Polsce!"/>
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/7/77/League_of_Legends_logo.png"/>
+    <meta property="og:url" content="https://mazimaziu.github.io/Strona1/"/>
+    <meta property="og:type" content="website"/>
+    <meta name="author" content="MaziMaziu"/>
+    <title>League of Legends Polska - Wszystko o LoL!</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/77/League_of_Legends_logo.png" type="image/png"/>
+</head>
+<body>
+    <header>
+        <div class="logo-nav">
+            <a href="index.html" class="logo-link" aria-label="Strona główna League of Legends Polska">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/League_of_Legends_logo.png" alt="League of Legends Logo" class="logo"/>
+            </a>
+            <nav>
+                <a href="index.html">Strona główna</a>
+                <a href="champions.html">Bohaterowie</a>
+                <a href="gallery.html">Galeria</a>
+                <a href="blog.html">Blog</a>
+                <a href="ranking.html">Ranking</a>
+                <a href="meta.html">Meta</a>
+                <a href="api.html">API</a>
+                <a href="about.html">O grze</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero animate">
+            <h1>League of Legends Polska</h1>
+            <p>Najlepsza polska strona o LoL - nowości, patch notes, bohaterowie, galeria, streamerzy i więcej!</p>
+            <a href="champions.html" class="main-btn">Poznaj bohaterów</a>
+            <div class="visits-counter" id="visits"></div>
+        </section>
+        <section class="news animate">
+            <h2>Aktualności</h2>
+            <article>
+                <h3>Patch 14.10 już dostępny</h3>
+                <p>Nowe zmiany w balansie, aktualizacje bohaterów i przedmiotów. Sprawdź <a href="https://www.leagueoflegends.com/pl-pl/news/game-updates/patch-14-10-notes/" target="_blank" rel="noopener">pełną listę zmian</a>.</p>
+            </article>
+            <article>
+                <h3>Start głosowania na ulubionego championa!</h3>
+                <p>Wejdź na <a href="champions.html">listę bohaterów</a> i oddaj swój głos!</p>
+            </article>
+        </section>
+        <section class="random-fact animate" id="random-fact"></section>
+        <section class="streamers animate">
+            <h2>Polecani streamerzy LoL</h2>
+            <ul>
+                <li><a href="https://www.twitch.tv/iwDominate" target="_blank" rel="noopener">IWD (EN)</a></li>
+                <li><a href="https://www.twitch.tv/bartosz" target="_blank" rel="noopener">Bartosz (PL)</a></li>
+                <li><a href="https://www.twitch.tv/solary" target="_blank" rel="noopener">Solary (FR)</a></li>
+                <li><a href="https://www.twitch.tv/l9ratirl" target="_blank" rel="noopener">RatIRL (EN)</a></li>
+            </ul>
+        </section>
+        <section class="socials animate">
+            <h2>Dołącz do społeczności</h2>
+            <a href="https://www.leagueoflegends.com/pl-pl/" target="_blank" rel="noopener" class="social-btn">Oficjalna strona LoL</a>
+            <a href="https://discord.gg/leagueoflegends" target="_blank" rel="noopener" class="social-btn discord">Discord LoL</a>
+            <a href="https://www.youtube.com/user/RiotGamesPolska" target="_blank" rel="noopener" class="social-btn yt">YouTube Riot Polska</a>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            &copy; 2025 League of Legends Polska. Strona fanowska, niepowiązana z Riot Games. <span style="color:#C89B3C;">GG WP!</span>
+        </div>
+    </footer>
+    <script>
+    // Licznik odwiedzin
+    const visits = localStorage.getItem('visits') ? parseInt(localStorage.getItem('visits')) + 1 : 1;
+    localStorage.setItem('visits', visits);
+    document.getElementById('visits').textContent = `Liczba Twoich odwiedzin: ${visits}`;
+    </script>
+    <script src="bajery.js"></script>
+</body>
+</html>

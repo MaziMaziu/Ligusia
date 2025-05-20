@@ -1,0 +1,373 @@
+:root {
+    --main-bg: #101522;
+    --main-accent: #005A82;
+    --main-accent2: #0a1a2f;
+    --secondary-accent: #C89B3C;
+    --text-light: #f5f5fa;
+    --card-bg: #23243a;
+    --card-border: #2c2e4a;
+    --shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--main-bg);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+}
+header {
+    background: linear-gradient(90deg, var(--main-accent), #0a2a36 80%);
+    box-shadow: var(--shadow);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.logo-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6px 20px 6px 8px;
+    gap: 30px;
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.logo {
+    height: 54px;
+    filter: drop-shadow(0 0 10px #000a);
+}
+nav {
+    flex: 1;
+}
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    letter-spacing: 1px;
+    margin: 0 16px;
+    font-size: 1em;
+}
+nav a:hover {
+    color: var(--secondary-accent);
+    text-shadow: 0 2px 8px #000,0 1px 1px var(--main-accent);
+}
+.main-btn {
+    background: var(--main-accent);
+    color: var(--text-light);
+    border: none;
+    padding: 14px 34px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 18px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    box-shadow: var(--shadow);
+}
+.main-btn:hover {
+    background: var(--secondary-accent);
+    color: var(--main-bg);
+    transform: scale(1.08) rotate(-2deg);
+}
+.hero {
+    background: url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg') center/cover no-repeat;
+    padding: 110px 0 80px 0;
+    text-align: center;
+    color: #fff;
+    box-shadow: var(--shadow);
+    border-bottom: 3px solid var(--secondary-accent);
+    animation: heroAnim 1.6s cubic-bezier(.68,-0.55,.27,1.55) 1;
+}
+@keyframes heroAnim {
+    0% { opacity:0; transform:translateY(-40px) scale(.96);}
+    100% { opacity:1; transform:translateY(0) scale(1);}
+}
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 18px #000a, 0 0 8px #C89B3C77;
+    letter-spacing: 2px;
+    animation: fadeInUp .9s .1s both;
+}
+@keyframes fadeInUp {
+    0% { opacity:0; transform:translateY(40px);}
+    100% { opacity:1; transform:translateY(0);}
+}
+.hero p {
+    font-size: 1.3em;
+    text-shadow: 0 1px 12px #000a;
+}
+.visits-counter {
+    margin-top: 18px;
+    font-size: 1em;
+    color: #aaa;
+    text-shadow: 0 1px 2px #000;
+}
+h1, h2 {
+    color: var(--secondary-accent);
+}
+section, main > h1 {
+    max-width: 960px;
+    margin: 32px auto 0 auto;
+    padding: 0 18px;
+}
+.news article {
+    background: var(--card-bg);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    padding: 16px;
+    box-shadow: 0 2px 9px #0004;
+    border-left: 5px solid var(--main-accent);
+}
+.champion-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 18px;
+    margin: 28px 0;
+}
+.champion {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: border 0.2s, transform 0.2s, background .3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.champion:hover {
+    border: 2px solid var(--secondary-accent);
+    transform: scale(1.04);
+    background: linear-gradient(120deg,#23243a,#3a2c43 120%);
+    box-shadow: 0 0 20px #C89B3C44;
+}
+.champion img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    height: 140px;
+    object-fit: cover;
+    filter: brightness(1.08) drop-shadow(0 0 8px #c89b3c22);
+    transition: filter .2s;
+}
+.champion:hover img {
+    filter: brightness(1.25) drop-shadow(0 0 18px #c89b3c77);
+}
+.vote-count {
+    margin-top: 8px;
+    color: var(--secondary-accent);
+    font-weight: bold;
+}
+.random-champ-box {
+    margin: 24px auto 0 auto;
+    text-align: center;
+    font-size: 1.2em;
+    background: #181828bb;
+    border-radius: 12px;
+    color: #C89B3C;
+    max-width: 400px;
+    padding: 12px 0;
+    animation: fadeInUp 1s both;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 18px;
+    margin-top: 10px;
+    margin-bottom: 32px;
+}
+.gallery-img {
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #0006;
+    transition: transform 0.2s, border 0.2s, filter .3s;
+    filter: grayscale(.20) contrast(1.2) brightness(.98);
+}
+.gallery-img:hover {
+    transform: scale(1.07) rotate(-2deg);
+    border: 3px solid var(--secondary-accent);
+    filter: grayscale(0) contrast(1.3) brightness(1.15);
+    z-index: 2;
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(20,22,32,0.94);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.lightbox-content {
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px #000b;
+}
+.lightbox .close {
+    color: #fff;
+    font-size: 2.7em;
+    font-weight: bold;
+    position: absolute;
+    right: 60px;
+    top: 60px;
+    cursor: pointer;
+    text-shadow: 0 2px 10px #000;
+}
+.random-fact {
+    background: linear-gradient(90deg, #23243a 60%, #005A82 120%);
+    border-radius: 16px;
+    color: #fff;
+    padding: 16px 22px;
+    margin: 32px auto 0 auto;
+    max-width: 700px;
+    box-shadow: var(--shadow);
+    font-size: 1.1em;
+}
+.streamers {
+    background: #181828;
+    border-radius: 14px;
+    margin-top: 28px;
+    padding: 18px 24px;
+    box-shadow: 0 2px 11px #0003;
+}
+.streamers h2 {
+    font-size: 1.4em;
+}
+.streamers ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.streamers li a {
+    background: var(--main-accent);
+    color: #fff;
+    border-radius: 7px;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background .2s;
+}
+.streamers li a:hover {
+    background: var(--secondary-accent);
+    color: #101522;
+}
+.socials {
+    margin-top: 34px;
+    text-align: center;
+}
+.social-btn {
+    display: inline-block;
+    margin: 7px 20px 8px 0;
+    background: #005A82;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 9px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 7px #0005;
+    transition: background .18s, color .2s;
+}
+.social-btn:hover,
+.social-btn.discord:hover {
+    background: #7289DA;
+    color: #fff;
+}
+.social-btn.yt:hover {
+    background: #ff4141;
+    color: #fff;
+}
+.social-btn.yt {
+    background: #e62e2e;
+}
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #aaa;
+    font-size: 1em;
+    text-align: center;
+    padding: 16px 0 12px 0;
+}
+footer {
+    background: var(--main-accent2);
+    margin-top: auto;
+    width: 100%;
+    box-shadow: 0 -2px 12px #0007;
+    position: relative;
+    min-height: 48px;
+}
+.animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+.animate.visible {
+    opacity: 1;
+    transform: none;
+}
+.about-box {
+    background: #181828;
+    border-radius: 14px;
+    padding: 18px 24px;
+    box-shadow: 0 2px 11px #0003;
+    font-size: 1.15em;
+    line-height: 1.55;
+}
+@media (max-width: 900px) {
+    .champion-list, .gallery-grid, .streamers ul {
+        grid-template-columns: 1fr 1fr;
+    }
+    .logo-nav {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 0 8px 18px 8px;
+    }
+    .hero {
+        padding: 55px 0 50px 0;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .champion img,
+    .gallery-img {
+        max-height: 150px;
+        object-fit: cover;
+    }
+    .lightbox .close {
+        right: 10px;
+        top: 10px;
+    }
+    .news article, .about-box, .streamers {
+        padding: 10px 8px;
+    }
+    .random-fact {
+        padding: 10px 8px;
+    }
+}

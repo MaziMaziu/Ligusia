@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bohaterowie - League of Legends Polska</title>
+    <meta name="description" content="Lista bohaterów League of Legends. Głosuj na swojego ulubionego championa, losowanie championa, opisy i statystyki!"/>
+    <meta name="keywords" content="League of Legends, LoL, bohaterowie, głosowanie, champion, statystyki, Polska"/>
+    <meta property="og:title" content="Bohaterowie - League of Legends Polska"/>
+    <meta property="og:description" content="Lista bohaterów z głosowaniem i losowaniem championa. Wybierz swojego ulubieńca!"/>
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/7/77/League_of_Legends_logo.png"/>
+    <meta property="og:type" content="website"/>
+    <meta name="author" content="MaziMaziu"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo-nav">
+            <a href="index.html" class="logo-link" aria-label="Strona główna League of Legends Polska">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/League_of_Legends_logo.png" alt="League of Legends Logo" class="logo"/>
+            </a>
+            <nav>
+                <a href="index.html">Strona główna</a>
+                <a href="champions.html">Bohaterowie</a>
+                <a href="gallery.html">Galeria</a>
+                <a href="blog.html">Blog</a>
+                <a href="ranking.html">Ranking</a>
+                <a href="meta.html">Meta</a>
+                <a href="api.html">API</a>
+                <a href="about.html">O grze</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1 class="animate">Bohaterowie League of Legends</h1>
+        <p class="animate">Kliknij na bohatera, aby oddać głos na swojego ulubieńca!</p>
+        <button class="main-btn animate" id="random-champ-btn">Losuj bohatera</button>
+        <div class="champion-list" id="champion-list"></div>
+        <div class="random-champ-box" id="random-champ-box"></div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            &copy; 2025 League of Legends Polska. <span style="color:#C89B3C;">Zagłosuj na swojego championa!</span>
+        </div>
+    </footer>
+    <script src="vote.js"></script>
+    <script>
+    // Losowanie bohatera
+    document.getElementById('random-champ-btn').addEventListener('click', () => {
+        const champs = Array.from(document.querySelectorAll('.champion h3')).map(x => x.textContent);
+        if(champs.length){
+            const i = Math.floor(Math.random()*champs.length);
+            document.getElementById('random-champ-box').textContent = 'Twój losowy bohater: ' + champs[i];
+            document.getElementById('random-champ-box').classList.add('animate');
+        }
+    });
+    </script>
+    <script src="bajery.js"></script>
+</body>
+</html>
