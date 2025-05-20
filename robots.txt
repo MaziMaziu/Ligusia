@@ -1,0 +1,13 @@
+# robots.txt for Ligusia
+
+# 1. Określenie User-agenta (dotyczy wszystkich robotów)
+User-agent: *
+
+# 2. Zablokowane ścieżki dla robotów (przykład)
+Disallow: /admin/
+
+# 3. Wyjątek od blokady - folder publiczny
+Allow: /publiczny-folder/
+
+# 4. Lokalizacja mapy witryny
+Sitemap: https://twojastrona.pl/sitemap.xml
